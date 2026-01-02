@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Controle de Apostas</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body { font-family: Arial; background:#f4f4f4; padding:20px; }
+h2 { text-align:center; }
+input, button { width:100%; padding:10px; margin:5px 0; }
+button { background:green; color:white; border:none; }
+.card { background:white; padding:15px; border-radius:8px; }
+</style>
+</head>
+<body>
+
+<h2>📊 Controle de Apostas</h2>
+
+<div class="card">
+<p><b>Banca:</b> R$ <span id="banca">50</span></p>
+
+<input type="number" id="valor" placeholder="Valor da aposta">
+<button onclick="ganho()">Ganho</button>
+<button onclick="perda()" style="background:red;">Perda</button>
+</div>
+
+<script>
+let banca = 50;
+function atualizar(){ document.getElementById("banca").innerText = banca.toFixed(2); }
+function ganho(){ banca += Number(valor.value); atualizar(); }
+function perda(){ banca -= Number(valor.value); atualizar(); }
+</script>
+
+</body>
+</html>
